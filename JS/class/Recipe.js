@@ -16,12 +16,16 @@ export class Recipe{
         <div class="card-img-top" style="height: 225px; width: 100%; display: block;background-color:#C7BEBE;"></div>
         <div class="card-body" style="background-color:#E7E7E7;">
           <div class="row d-flex justify-content-between align-items-center">
-            <p class="col-8 pr-0">recette de la tarte au citron</p>
-            <p class="col-3 text-dark ml-0 pl-0 pr-0 font-weight-bold"><i class="far fa-clock pr-2"></i>9 mins</p>
+            <p class="col-8 pr-0">${this.name}</p>
+            <p class="col-3 text-dark ml-0 pl-0 pr-0 font-weight-bold"><i class="far fa-clock pr-2"></i>${this.time} mins</p>
           </div>
           <div class="row">
-            <p class=" col card-text font-weight-bold">This is a wider card with supporting text below as a natural</p>
-            <p class=" col card-text">This is a wider card with supporting text below as a natural</p>
+            <div class=" col-6 card-text font-weight-bold">
+            <p>${this.ingredients}</p>
+            </div>
+            <div class=" col-6 card-text font-weight-bold">
+              <p class=" text-truncate">${this.description}</p>
+            </div>
           </div>
         </div>
       </div>
