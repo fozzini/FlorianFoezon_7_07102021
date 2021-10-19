@@ -1,3 +1,4 @@
+export const ingredientsArray = [];
 export class Ingredients{
   
   constructor(data){
@@ -14,5 +15,13 @@ export class Ingredients{
     } else{return this.unit}}
     /* création des ingrédients */
     return`<p class="card-text mb-0 fs-6" style='font-size:12px;'><strong >${this.ingredient} : </strong><small>${undefQuantity()} ${undefUnit()}</small></p>`;
+  }
+  createIngredientsArray(){
+    for (let index = 0; index < this.ingredient.length; index++) {
+      const element = this.ingredient[index];
+      const elementArray = [];
+      elementArray.push(element);
+    }
+    ingredientsArray = elementArray.join('');
   }
 }

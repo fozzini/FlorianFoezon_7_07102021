@@ -1,5 +1,9 @@
 import { Ingredients } from "./Ingredients.js";
 
+export const applianceArray = [];
+export const ustensilsArray = [];
+export const recipesArray = [];
+
 export class Recipe{
   constructor(data){
     this.id = data.id;
