@@ -14,7 +14,7 @@ export class Recipe{
     this.ustensils = data.ustensils;
   }
   createHtml(){
-    return`<div class="col-md-4">
+    return`<div class="card-container col-md-4">
       <div class="card mb-4 box-shadow">
         <div class="card-img-top" style="height: 235px; width: 100%; display: block;background-color:#C7BEBE;"></div>
         <div class="card-body" style="height: 235px; width: 100%; background-color:#E7E7E7;">

@@ -14,4 +14,7 @@ export const card = () =>{
     createUstensilsArray(recipe.ustensils);
     createIngredientsArray(recipe.ingredients)
   }
+  // createSortedApplianceArray();
+  // createSortedIngredientsArray();
+  // createSortedUstensilsArray();
 }
