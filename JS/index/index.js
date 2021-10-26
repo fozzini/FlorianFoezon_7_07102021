@@ -1,6 +1,17 @@
-import { NewRecipe } from '../class/recipesClass.js';
-import { recipes } from '../recipes/recipes.js';
+import {card} from '../layout/card.js';
+import { searchInput, searchInputAppliance, searchInputIngredients, searchInputUstensils } from '../sort/sort.js';
 
-const recipeCard = () =>{
-  
-}
+
+
+const init = () =>{
+card();
+searchInput();
+searchInputAppliance();
+searchInputIngredients();
+searchInputUstensils();
+// createSuggestion(doubleRemover(sortedIngredientsArray), "'ingredientsgst'" );
+// createSuggestion(doubleRemover(sortedApplianceArray), "'appliancesgt'" );
+// createSuggestion(doubleRemover(sortedUstensilsArray), "'ustensilsgt'" );
+};
+
+init();
