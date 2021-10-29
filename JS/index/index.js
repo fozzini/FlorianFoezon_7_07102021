@@ -1,17 +1,17 @@
+import { searchInput } from '../sort/sort.js';
+import {applianceArray, arrayCreator, createRecipesArray, ingredientsArray, nameArray, ustensilsArray} from '../Array/Array.js';
 import {card} from '../layout/card.js';
-import { searchInput, searchInputAppliance, searchInputIngredients, searchInputUstensils } from '../sort/sort.js';
-
-
-
 const init = () =>{
-card();
+createRecipesArray(); 
+arrayCreator(applianceArray, "appliance");
+arrayCreator(nameArray, "name");
+arrayCreator(ustensilsArray, "ustensils");
+arrayCreator(ingredientsArray, "ingredients");
 searchInput();
-searchInputAppliance();
-searchInputIngredients();
-searchInputUstensils();
-// createSuggestion(doubleRemover(sortedIngredientsArray), "'ingredientsgst'" );
-// createSuggestion(doubleRemover(sortedApplianceArray), "'appliancesgt'" );
-// createSuggestion(doubleRemover(sortedUstensilsArray), "'ustensilsgt'" );
+// searchInputAppliance();
+// searchInputIngredients();
+// searchInputUstensils();
+card();
 };
 
 init();
