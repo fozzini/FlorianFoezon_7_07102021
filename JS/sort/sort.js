@@ -1,45 +1,24 @@
 import { recipes } from "../data/data.js";
 import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray } from "../Array/Array.js";
+import { card } from "../layout/card.js";
+import { lowerCase } from "../utils/utils.js";
+import { loopObject } from "../utils/utils.js";
 
-export const searchInput = () => {
-  let input = document.getElementById("search");
+export const searchInput = (input) => {
   input.oninput = () => {
     sortCard(input.value)}
 };
 
-// export const searchInputIngredients = () => {
-//   let input = document.getElementById("ingredientsBtn");
-//   input.oninput = () => { 
-//   sortCard(input.value)}
-// };
-
-// export const searchInputAppliance = () => {
-//   let input = document.getElementById("applianceBtn");
-//   input.oninput = () => { 
-//   sortCard(input.value)}
-// };
-
-// export const searchInputUstensils = () => {
-//   let input = document.getElementById("ustensilsBtn");
-//   input.oninput = () => { 
-//   sortCard(input.value)}
-// };
-
 const sortCard = (value) => {
   recipesArray.length = 0;
   for (let index = 0; index < recipes.length; index++) {
-    const card = document.querySelectorAll(".card-container");
-    if (ingredientsArray[index].includes(value) ||
-      ustensilsArray[index].includes(value) ||
-      nameArray[index].includes(value) ||
-      applianceArray[index].includes(value))
+    if ((loopObject(ingredientsArray[index]).includes(value.toLowerCase())) ||
+      ustensilsArray[index].map(lowerCase).includes(value.toLowerCase()) ||
+      nameArray[index].toLowerCase().includes(value.toLowerCase()) ||
+      applianceArray[index].toLowerCase().includes(value.toLowerCase()))
     {
-      
-      console.log(recipesArray);
-      
+      recipesArray.push(recipes[index]);
     }
-    // else {
-    //   card[index].style.display = "none";
-    // }
   }
+  card(recipesArray);
 };

@@ -1,7 +1,4 @@
 import { Ingredients } from "./Ingredients.js";
-
-
-
 export class Recipe{
   constructor(data){
     this.id = data.id;

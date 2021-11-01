@@ -1,12 +1,12 @@
 import { Recipe } from '../class/Recipe.js';
-import {recipesArray} from '../Array/Array.js';
 
-export const card = () =>{
+export const card = (array) =>{
   const gallery = document.querySelector(".gallery");
-  for (let index = 0; index < recipesArray.length; index++) {
-  const element = recipesArray[index];
-  console.log(element);
+  const arrayRawHtml = [];
+  for (let index = 0; index < array.length; index++) {
+  const element = array[index];
   const recipe = new Recipe(element);
-  gallery.insertAdjacentHTML("beforeend",recipe.createHtml());
+  arrayRawHtml.push(recipe.createHtml());
   }
-}
+  gallery.innerHTML = arrayRawHtml.join("");
+};

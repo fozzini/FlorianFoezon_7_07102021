@@ -1,8 +1,12 @@
-export const doubleRemover = (array) => {
-  array.filter(function(ele , pos){return array.indexOf(ele) == pos;})
+
+export const lowerCase = (value) => {
+  return value.toLowerCase();
 }
 
-// document.querySelector('.editButt').addEventListener('click', function(e) {
-// let database = e.target.previousElementSibling;
-// document.querySelector('#input_box').value = database.innerText;
-// })
+export const loopObject = (myArray) => {
+  let ingredientList = [];
+  for (let i= 0; i < myArray.length; i++){
+    ingredientList.push(myArray[i].ingredient.toLowerCase()) ;
+  }
+  return ingredientList
+};

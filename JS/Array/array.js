@@ -7,7 +7,10 @@ export let nameArray = [];
 export let ingredientsArray = [];
 
 export const createRecipesArray = () =>{
-  recipesArray=recipes
+  for (let index = 0; index < recipes.length; index++) {
+    const element = recipes[index];
+    recipesArray.push(element);
+  }
 };
 
 export const arrayCreator = (array, property) => {
