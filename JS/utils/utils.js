@@ -10,3 +10,10 @@ export const loopObject = (myArray) => {
   }
   return ingredientList
 };
+
+export const concatArray = (myArray) => {
+  for (let i= 0; i < myArray.length; i++){
+     return myArray[i].toLowerCase() ;
+  }
+};
+

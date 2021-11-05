@@ -16,8 +16,8 @@
     "url": "https://github.com/fozzini/FlorianFoezon_7_07102021/issues"
   },
   "homepage": "https://github.com/fozzini/FlorianFoezon_7_07102021#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "parcel": "^2.0.0-rc.0"
-  }
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {}
 }
