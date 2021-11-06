@@ -5,6 +5,10 @@ export let applianceArray = [];
 export let ustensilsArray = [];
 export let nameArray = [];
 export let ingredientsArray = [];
+export let filteredApplianceArray = [];
+export let filteredUstensilsArray = [];
+export let filteredNameArray = [];
+export let filteredIngredientsArray = [];
 
 export const createRecipesArray = () =>{
   for (let index = 0; index < recipes.length; index++) {
@@ -18,4 +22,5 @@ export const arrayCreator = (array, property) => {
     const element = recipesArray[index][property];
     array.push(element);
   }
-};
+  console.log(array);
+}

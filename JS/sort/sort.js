@@ -1,49 +1,64 @@
 import { recipes } from "../data/data.js";
-import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray } from "../Array/Array.js";
+import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray } from "../Array/Array.js";
 import { card } from "../layout/card.js";
-import { concatArray, lowerCase } from "../utils/utils.js";
+import { lowerCase, lowercaseArray, removeDouble } from "../utils/utils.js";
 import { loopObject } from "../utils/utils.js";
-import { applianceSet, ingredientSet, nameArraySet, ustensilsSet } from "../set/set.js";
 import { createSuggestion } from "./suggestion.js";
 
-export const searchInput = (input) => {
+export const searchInput = (input, condition) => {
   input.oninput = () => {
-    sortCard(input.value)}
+    sortCard(input.value, condition)}
 };
 
-const sortCard = (value) => {
+const sortCard = (value, condition) => {
   resetArray();
   for (let index = 0; index < recipes.length; index++) {
-    if (setCondition(index, value))
+    if (setCondition(index, value, condition))
     {
-      setArrays(index);
+      recipesArray.push(recipes[index]);
     }
   }
-  card(recipesArray);
-  // createSuggestion(ingredientSet, "ingredientsgst")
-  // createSuggestion(ustensilsSet, "ustensilsgt")
-  createSuggestion(applianceSet, "appliancesgt")
+  setArrays();
+  displayItems();
 };
 
+export const setArrays = () => {
+  arrayCreator(filteredApplianceArray, "appliance");
+  arrayCreator(filteredNameArray, "name");
+  arrayCreator(filteredUstensilsArray, "ustensils");
+  arrayCreator(filteredIngredientsArray, "ingredients");
+};
 const resetArray = () => {
   recipesArray.length = 0;
-  applianceSet.clear();
-  nameArraySet.clear();
-  ustensilsSet.clear();
-  ingredientSet.clear();
+  filteredApplianceArray.length = 0;
+  filteredUstensilsArray.length = 0;
+  filteredNameArray.length = 0;
+  filteredIngredientsArray.length = 0;
+};
+const setCondition = (index, value, condition) => { 
+  const ingredientsCondition = loopObject(ingredientsArray[index]).includes(value.toLowerCase());
+  const ustensilsCondition = ustensilsArray[index].map(lowerCase).includes(value.toLowerCase());
+  const nameCondition = nameArray[index].toLowerCase().includes(value.toLowerCase());
+  const applianceCondition = applianceArray[index].toLowerCase().includes(value.toLowerCase());
+  
+  switch (condition) {
+    case "ingredients":
+      return ingredientsCondition;
+    case "ustensils":
+      return ustensilsCondition;
+    case "appliance":
+      return applianceCondition;    
+    case "globals":
+      return ingredientsCondition || ustensilsCondition || applianceCondition || nameCondition;
+    default:
+      break;
+  }
 };
 
-const setArrays = (index) => {
-  recipesArray.push(recipes[index]);
-  applianceSet.add(applianceArray[index].toLowerCase())
-  nameArraySet.add(nameArray[index].toLowerCase())
-  ustensilsSet.add(concatArray(ustensilsArray[index].map(lowerCase)))
-  ingredientSet.add(concatArray(loopObject(ingredientsArray[index])))
-};
+export const displayItems = () => {
+  card(recipesArray);
+  createSuggestion(removeDouble(filteredIngredientsArray), "ingredientsgst")
+  createSuggestion(removeDouble(lowercaseArray( filteredUstensilsArray.flat())), "ustensilsgt")
+  createSuggestion(removeDouble(lowercaseArray(filteredApplianceArray)), "appliancesgt")
+}
 
-const setCondition = (index, value) => { 
-  return loopObject(ingredientsArray[index]).includes(value.toLowerCase()) ||
-  ustensilsArray[index].map(lowerCase).includes(value.toLowerCase()) ||
-  nameArray[index].toLowerCase().includes(value.toLowerCase()) ||
-  applianceArray[index].toLowerCase().includes(value.toLowerCase())
-};
