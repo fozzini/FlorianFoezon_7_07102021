@@ -31,3 +31,12 @@ export const removeDouble = (array) => {
  let ens = new Set(array);
  return Array.from(ens);
 };
+
+export const objectProperty = (array) => {
+  let newArray = []
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index]["ingredient"];
+      newArray.push(element);
+    }
+    return newArray;
+};

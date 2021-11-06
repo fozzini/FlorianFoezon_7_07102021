@@ -22,5 +22,4 @@ export const arrayCreator = (array, property) => {
     const element = recipesArray[index][property];
     array.push(element);
   }
-  console.log(array);
 }

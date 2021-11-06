@@ -1,7 +1,7 @@
 import { recipes } from "../data/data.js";
 import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray } from "../Array/Array.js";
 import { card } from "../layout/card.js";
-import { lowerCase, lowercaseArray, removeDouble } from "../utils/utils.js";
+import { lowerCase, lowercaseArray, objectProperty, removeDouble } from "../utils/utils.js";
 import { loopObject } from "../utils/utils.js";
 import { createSuggestion } from "./suggestion.js";
 
@@ -57,7 +57,7 @@ const setCondition = (index, value, condition) => {
 
 export const displayItems = () => {
   card(recipesArray);
-  createSuggestion(removeDouble(filteredIngredientsArray), "ingredientsgst")
+  createSuggestion(removeDouble(lowercaseArray(objectProperty(filteredIngredientsArray.flat()))), "ingredientsgst")
   createSuggestion(removeDouble(lowercaseArray( filteredUstensilsArray.flat())), "ustensilsgt")
   createSuggestion(removeDouble(lowercaseArray(filteredApplianceArray)), "appliancesgt")
 }

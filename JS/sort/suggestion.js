@@ -8,5 +8,5 @@ export const createSuggestion = (itemArray, loc) => {
     const element = itemArray[index];
     array.push(suggestion(element));
   }
-  location.innerHTML= array;
+  location.innerHTML= array.join("");
 }
