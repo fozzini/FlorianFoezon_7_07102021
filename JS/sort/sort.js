@@ -1,9 +1,9 @@
-import { recipes } from "../data/data.js";
-import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray } from "../Array/Array.js";
+import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray, filteredRecipesArray } from "../Array/Array.js";
 import { card } from "../layout/card.js";
 import { lowerCase, lowercaseArray, objectProperty, removeDouble } from "../utils/utils.js";
 import { loopObject } from "../utils/utils.js";
 import { createSuggestion } from "./suggestion.js";
+
 
 export const searchInput = (input, condition) => {
   input.oninput = () => {
@@ -12,10 +12,10 @@ export const searchInput = (input, condition) => {
 
 const sortCard = (value, condition) => {
   resetArray();
-  for (let index = 0; index < recipes.length; index++) {
+  for (let index = 0; index < recipesArray.length; index++) {
     if (setCondition(index, value, condition))
     {
-      recipesArray.push(recipes[index]);
+      filteredRecipesArray.push(recipesArray[index]);
     }
   }
   setArrays();
@@ -30,7 +30,7 @@ export const setArrays = () => {
 };
 
 const resetArray = () => {
-  recipesArray.length = 0;
+  filteredRecipesArray.length = 0;
   filteredApplianceArray.length = 0;
   filteredUstensilsArray.length = 0;
   filteredNameArray.length = 0;
@@ -58,7 +58,7 @@ const setCondition = (index, value, condition) => {
 };
 
 export const displayItems = () => {
-  card(recipesArray);
+  card(filteredRecipesArray);
   createSuggestion(removeDouble(lowercaseArray(objectProperty(filteredIngredientsArray.flat()))), "ingredientsgst")
   createSuggestion(removeDouble(lowercaseArray( filteredUstensilsArray.flat())), "ustensilsgt")
   createSuggestion(removeDouble(lowercaseArray(filteredApplianceArray)), "appliancesgt")

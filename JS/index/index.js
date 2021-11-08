@@ -1,13 +1,15 @@
-import { displayItems, searchInput, setArrays } from '../sort/sort.js';
-import {applianceArray, arrayCreator, createRecipesArray, ingredientsArray, nameArray, ustensilsArray} from '../Array/Array.js';
+import { displayItems, searchInput } from '../sort/sort.js';
+import {applianceArray, arrayCreator, ingredientsArray, nameArray, ustensilsArray} from '../Array/Array.js';
+
+import { getData } from "../data/getData.js";
 
 let globalSearch = document.getElementById("search");
 let ingredientsSearch = document.getElementById("ingredientsBtn") ;
 let applianceSearch = document.getElementById("applianceBtn") ;
 let ustensilsSearch = document.getElementById("ustensilsBtn") ;
 
-const init = () =>{
-createRecipesArray();
+const init = async () =>{
+await getData();
 arrayCreator(applianceArray, "appliance");
 arrayCreator(nameArray, "name");
 arrayCreator(ustensilsArray, "ustensils");

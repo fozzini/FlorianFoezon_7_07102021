@@ -40,3 +40,4 @@ export const objectProperty = (array) => {
     }
     return newArray;
 };
+
