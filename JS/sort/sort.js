@@ -1,4 +1,4 @@
-import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray, filteredRecipesArray } from "../Array/Array.js";
+import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray, filteredRecipesArray } from "../array/Array.js";
 import { card } from "../layout/card.js";
 import { lowerCase, lowercaseArray, objectProperty, removeDouble } from "../utils/utils.js";
 import { loopObject } from "../utils/utils.js";

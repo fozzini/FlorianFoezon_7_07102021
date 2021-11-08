@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"JS/Array/Array.js":[function(require,module,exports) {
+})({"JS/array/Array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -400,7 +400,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setArrays = exports.searchInput = exports.displayItems = void 0;
 
-var _Array = require("../Array/Array.js");
+var _Array = require("../array/Array.js");
 
 var _card = require("../layout/card.js");
 
@@ -481,7 +481,55 @@ var displayItems = function displayItems() {
 };
 
 exports.displayItems = displayItems;
-},{"../Array/Array.js":"JS/Array/Array.js","../layout/card.js":"JS/layout/card.js","../utils/utils.js":"JS/utils/utils.js","./suggestion.js":"JS/sort/suggestion.js"}],"JS/data/getData.js":[function(require,module,exports) {
+},{"../array/Array.js":"JS/array/Array.js","../layout/card.js":"JS/layout/card.js","../utils/utils.js":"JS/utils/utils.js","./suggestion.js":"JS/sort/suggestion.js"}],"JS/array/array.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ustensilsArray = exports.recipesArray = exports.nameArray = exports.ingredientsArray = exports.filteredUstensilsArray = exports.filteredRecipesArray = exports.filteredNameArray = exports.filteredIngredientsArray = exports.filteredApplianceArray = exports.createRecipesArray = exports.arrayCreator = exports.applianceArray = void 0;
+var recipesArray = [];
+exports.recipesArray = recipesArray;
+var applianceArray = [];
+exports.applianceArray = applianceArray;
+var ustensilsArray = [];
+exports.ustensilsArray = ustensilsArray;
+var nameArray = [];
+exports.nameArray = nameArray;
+var ingredientsArray = [];
+exports.ingredientsArray = ingredientsArray;
+var filteredRecipesArray = [];
+exports.filteredRecipesArray = filteredRecipesArray;
+var filteredApplianceArray = [];
+exports.filteredApplianceArray = filteredApplianceArray;
+var filteredUstensilsArray = [];
+exports.filteredUstensilsArray = filteredUstensilsArray;
+var filteredNameArray = [];
+exports.filteredNameArray = filteredNameArray;
+var filteredIngredientsArray = [];
+exports.filteredIngredientsArray = filteredIngredientsArray;
+
+var createRecipesArray = function createRecipesArray(data) {
+  var recipes = data.recipes;
+
+  for (var index = 0; index < recipes.length; index++) {
+    var element = recipes[index];
+    recipesArray.push(element);
+    filteredRecipesArray.push(element);
+  }
+};
+
+exports.createRecipesArray = createRecipesArray;
+
+var arrayCreator = function arrayCreator(array, property) {
+  for (var index = 0; index < recipesArray.length; index++) {
+    var element = recipesArray[index][property];
+    array.push(element);
+  }
+};
+
+exports.arrayCreator = arrayCreator;
+},{}],"JS/data/getData.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -489,7 +537,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getData = void 0;
 
-var _Array = require("../Array/Array.js");
+var _Array = require("../array/Array.js");
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -526,12 +574,12 @@ var getData = /*#__PURE__*/function () {
 }();
 
 exports.getData = getData;
-},{"../Array/Array.js":"JS/Array/Array.js"}],"JS/index/index.js":[function(require,module,exports) {
+},{"../array/Array.js":"JS/array/Array.js"}],"JS/index/index.js":[function(require,module,exports) {
 "use strict";
 
 var _sort = require("../sort/sort.js");
 
-var _Array = require("../Array/Array.js");
+var _array = require("../array/array.js");
 
 var _getData = require("../data/getData.js");
 
@@ -554,10 +602,10 @@ var init = /*#__PURE__*/function () {
             return (0, _getData.getData)();
 
           case 2:
-            (0, _Array.arrayCreator)(_Array.applianceArray, "appliance");
-            (0, _Array.arrayCreator)(_Array.nameArray, "name");
-            (0, _Array.arrayCreator)(_Array.ustensilsArray, "ustensils");
-            (0, _Array.arrayCreator)(_Array.ingredientsArray, "ingredients");
+            (0, _array.arrayCreator)(_array.applianceArray, "appliance");
+            (0, _array.arrayCreator)(_array.nameArray, "name");
+            (0, _array.arrayCreator)(_array.ustensilsArray, "ustensils");
+            (0, _array.arrayCreator)(_array.ingredientsArray, "ingredients");
             (0, _sort.searchInput)(globalSearch, "globals");
             (0, _sort.searchInput)(ingredientsSearch, "ingredients");
             (0, _sort.searchInput)(applianceSearch, "appliance");
@@ -578,7 +626,7 @@ var init = /*#__PURE__*/function () {
 }();
 
 init();
-},{"../sort/sort.js":"JS/sort/sort.js","../Array/Array.js":"JS/Array/Array.js","../data/getData.js":"JS/data/getData.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../sort/sort.js":"JS/sort/sort.js","../array/array.js":"JS/array/array.js","../data/getData.js":"JS/data/getData.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
