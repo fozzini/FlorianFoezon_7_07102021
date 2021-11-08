@@ -1,5 +1,5 @@
 import { displayItems, searchInput } from '../sort/sort.js';
-import {applianceArray, arrayCreator, ingredientsArray, nameArray, ustensilsArray} from '../array/array.js';
+import { applianceArray, arrayCreator, ingredientsArray, nameArray, ustensilsArray } from '../array/array.js';
 
 import { getData } from "../data/getData.js";
 

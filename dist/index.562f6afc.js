@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"JS/array/Array.js":[function(require,module,exports) {
+})({"JS/array/array.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -400,7 +400,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.setArrays = exports.searchInput = exports.displayItems = void 0;
 
-var _Array = require("../array/Array.js");
+var _array = require("../array/array.js");
 
 var _card = require("../layout/card.js");
 
@@ -419,9 +419,9 @@ exports.searchInput = searchInput;
 var sortCard = function sortCard(value, condition) {
   resetArray();
 
-  for (var index = 0; index < _Array.recipesArray.length; index++) {
+  for (var index = 0; index < _array.recipesArray.length; index++) {
     if (setCondition(index, value, condition)) {
-      _Array.filteredRecipesArray.push(_Array.recipesArray[index]);
+      _array.filteredRecipesArray.push(_array.recipesArray[index]);
     }
   }
 
@@ -430,30 +430,30 @@ var sortCard = function sortCard(value, condition) {
 };
 
 var setArrays = function setArrays() {
-  (0, _Array.arrayCreator)(_Array.filteredApplianceArray, "appliance");
-  (0, _Array.arrayCreator)(_Array.filteredNameArray, "name");
-  (0, _Array.arrayCreator)(_Array.filteredUstensilsArray, "ustensils");
-  (0, _Array.arrayCreator)(_Array.filteredIngredientsArray, "ingredients");
+  (0, _array.arrayCreator)(_array.filteredApplianceArray, "appliance");
+  (0, _array.arrayCreator)(_array.filteredNameArray, "name");
+  (0, _array.arrayCreator)(_array.filteredUstensilsArray, "ustensils");
+  (0, _array.arrayCreator)(_array.filteredIngredientsArray, "ingredients");
 };
 
 exports.setArrays = setArrays;
 
 var resetArray = function resetArray() {
-  _Array.filteredRecipesArray.length = 0;
-  _Array.filteredApplianceArray.length = 0;
-  _Array.filteredUstensilsArray.length = 0;
-  _Array.filteredNameArray.length = 0;
-  _Array.filteredIngredientsArray.length = 0;
+  _array.filteredRecipesArray.length = 0;
+  _array.filteredApplianceArray.length = 0;
+  _array.filteredUstensilsArray.length = 0;
+  _array.filteredNameArray.length = 0;
+  _array.filteredIngredientsArray.length = 0;
 };
 
 var setCondition = function setCondition(index, value, condition) {
-  var ingredientsCondition = (0, _utils.loopObject)(_Array.ingredientsArray[index]).includes(value.toLowerCase());
+  var ingredientsCondition = (0, _utils.loopObject)(_array.ingredientsArray[index]).includes(value.toLowerCase());
 
-  var ustensilsCondition = _Array.ustensilsArray[index].map(_utils.lowerCase).includes(value.toLowerCase());
+  var ustensilsCondition = _array.ustensilsArray[index].map(_utils.lowerCase).includes(value.toLowerCase());
 
-  var nameCondition = _Array.nameArray[index].toLowerCase().includes(value.toLowerCase());
+  var nameCondition = _array.nameArray[index].toLowerCase().includes(value.toLowerCase());
 
-  var applianceCondition = _Array.applianceArray[index].toLowerCase().includes(value.toLowerCase());
+  var applianceCondition = _array.applianceArray[index].toLowerCase().includes(value.toLowerCase());
 
   switch (condition) {
     case "ingredients":
@@ -474,62 +474,14 @@ var setCondition = function setCondition(index, value, condition) {
 };
 
 var displayItems = function displayItems() {
-  (0, _card.card)(_Array.filteredRecipesArray);
-  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)((0, _utils.objectProperty)(_Array.filteredIngredientsArray.flat()))), "ingredientsgst");
-  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)(_Array.filteredUstensilsArray.flat())), "ustensilsgt");
-  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)(_Array.filteredApplianceArray)), "appliancesgt");
+  (0, _card.card)(_array.filteredRecipesArray);
+  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)((0, _utils.objectProperty)(_array.filteredIngredientsArray.flat()))), "ingredientsgst");
+  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)(_array.filteredUstensilsArray.flat())), "ustensilsgt");
+  (0, _suggestion.createSuggestion)((0, _utils.removeDouble)((0, _utils.lowercaseArray)(_array.filteredApplianceArray)), "appliancesgt");
 };
 
 exports.displayItems = displayItems;
-},{"../array/Array.js":"JS/array/Array.js","../layout/card.js":"JS/layout/card.js","../utils/utils.js":"JS/utils/utils.js","./suggestion.js":"JS/sort/suggestion.js"}],"JS/array/array.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ustensilsArray = exports.recipesArray = exports.nameArray = exports.ingredientsArray = exports.filteredUstensilsArray = exports.filteredRecipesArray = exports.filteredNameArray = exports.filteredIngredientsArray = exports.filteredApplianceArray = exports.createRecipesArray = exports.arrayCreator = exports.applianceArray = void 0;
-var recipesArray = [];
-exports.recipesArray = recipesArray;
-var applianceArray = [];
-exports.applianceArray = applianceArray;
-var ustensilsArray = [];
-exports.ustensilsArray = ustensilsArray;
-var nameArray = [];
-exports.nameArray = nameArray;
-var ingredientsArray = [];
-exports.ingredientsArray = ingredientsArray;
-var filteredRecipesArray = [];
-exports.filteredRecipesArray = filteredRecipesArray;
-var filteredApplianceArray = [];
-exports.filteredApplianceArray = filteredApplianceArray;
-var filteredUstensilsArray = [];
-exports.filteredUstensilsArray = filteredUstensilsArray;
-var filteredNameArray = [];
-exports.filteredNameArray = filteredNameArray;
-var filteredIngredientsArray = [];
-exports.filteredIngredientsArray = filteredIngredientsArray;
-
-var createRecipesArray = function createRecipesArray(data) {
-  var recipes = data.recipes;
-
-  for (var index = 0; index < recipes.length; index++) {
-    var element = recipes[index];
-    recipesArray.push(element);
-    filteredRecipesArray.push(element);
-  }
-};
-
-exports.createRecipesArray = createRecipesArray;
-
-var arrayCreator = function arrayCreator(array, property) {
-  for (var index = 0; index < recipesArray.length; index++) {
-    var element = recipesArray[index][property];
-    array.push(element);
-  }
-};
-
-exports.arrayCreator = arrayCreator;
-},{}],"JS/data/getData.js":[function(require,module,exports) {
+},{"../array/array.js":"JS/array/array.js","../layout/card.js":"JS/layout/card.js","../utils/utils.js":"JS/utils/utils.js","./suggestion.js":"JS/sort/suggestion.js"}],"JS/data/getData.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
