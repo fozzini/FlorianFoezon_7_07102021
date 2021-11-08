@@ -1,4 +1,4 @@
-import { createRecipesArray } from "../array/Array.js";
+import { createRecipesArray } from "../array/array.js";
 
 export const getData = async () => {
   const url = "data.json";

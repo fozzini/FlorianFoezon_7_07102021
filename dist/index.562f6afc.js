@@ -537,7 +537,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getData = void 0;
 
-var _Array = require("../array/Array.js");
+var _array = require("../array/array.js");
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -555,7 +555,7 @@ var getData = /*#__PURE__*/function () {
             return fetch(url).then(function (resp) {
               return resp.json();
             }).then(function (data) {
-              return (0, _Array.createRecipesArray)(data);
+              return (0, _array.createRecipesArray)(data);
             }).catch(function (e) {
               return console.log("une erreur c'est produite", e);
             });
@@ -574,7 +574,7 @@ var getData = /*#__PURE__*/function () {
 }();
 
 exports.getData = getData;
-},{"../array/Array.js":"JS/array/Array.js"}],"JS/index/index.js":[function(require,module,exports) {
+},{"../array/array.js":"JS/array/array.js"}],"JS/index/index.js":[function(require,module,exports) {
 "use strict";
 
 var _sort = require("../sort/sort.js");
