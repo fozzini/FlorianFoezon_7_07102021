@@ -558,13 +558,14 @@ var init = /*#__PURE__*/function () {
             (0, _array.arrayCreator)(_array.nameArray, "name");
             (0, _array.arrayCreator)(_array.ustensilsArray, "ustensils");
             (0, _array.arrayCreator)(_array.ingredientsArray, "ingredients");
+            (0, _sort.setArrays)();
             (0, _sort.searchInput)(globalSearch, "globals");
             (0, _sort.searchInput)(ingredientsSearch, "ingredients");
             (0, _sort.searchInput)(applianceSearch, "appliance");
             (0, _sort.searchInput)(ustensilsSearch, "ustensils");
             (0, _sort.displayItems)();
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
