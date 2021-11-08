@@ -28,6 +28,7 @@ export const setArrays = () => {
   arrayCreator(filteredUstensilsArray, "ustensils");
   arrayCreator(filteredIngredientsArray, "ingredients");
 };
+
 const resetArray = () => {
   recipesArray.length = 0;
   filteredApplianceArray.length = 0;
@@ -35,6 +36,7 @@ const resetArray = () => {
   filteredNameArray.length = 0;
   filteredIngredientsArray.length = 0;
 };
+
 const setCondition = (index, value, condition) => { 
   const ingredientsCondition = loopObject(ingredientsArray[index]).includes(value.toLowerCase());
   const ustensilsCondition = ustensilsArray[index].map(lowerCase).includes(value.toLowerCase());
