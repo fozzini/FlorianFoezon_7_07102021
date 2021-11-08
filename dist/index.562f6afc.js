@@ -158,8 +158,8 @@ var createRecipesArray = function createRecipesArray(data) {
 exports.createRecipesArray = createRecipesArray;
 
 var arrayCreator = function arrayCreator(array, property) {
-  for (var index = 0; index < recipesArray.length; index++) {
-    var element = recipesArray[index][property];
+  for (var index = 0; index < filteredRecipesArray.length; index++) {
+    var element = filteredRecipesArray[index][property];
     array.push(element);
   }
 };

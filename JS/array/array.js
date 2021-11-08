@@ -18,8 +18,8 @@ export const createRecipesArray = (data) =>{
   }
 };
 export const arrayCreator = (array, property) => {
-  for (let index = 0; index < recipesArray.length; index++) {
-    const element = recipesArray[index][property];
+  for (let index = 0; index < filteredRecipesArray.length; index++) {
+    const element = filteredRecipesArray[index][property];
     array.push(element);
   }
 }
