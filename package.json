@@ -2,10 +2,10 @@
   "name": "florianfoezon_7_07102021",
   "version": "1.0.0",
   "description": "Les petits plats",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "start": "parcel index.html",
-    "build-prod": "parcel build index.html"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
