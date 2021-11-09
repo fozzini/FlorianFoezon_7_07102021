@@ -17,6 +17,7 @@ export const createRecipesArray = (data) =>{
     filteredRecipesArray.push(element)
   }
 };
+
 export const arrayCreator = (array, property) => {
   for (let index = 0; index < filteredRecipesArray.length; index++) {
     const element = filteredRecipesArray[index][property];

@@ -24,7 +24,6 @@ export const concatArray = (myArray) => {
   for (let i= 0; i < myArray.length; i++){
      myArray[i].toLowerCase() ;
   }
-  
 };
 
 export const removeDouble = (array) => {
@@ -40,4 +39,6 @@ export const objectProperty = (array) => {
     }
     return newArray;
 };
+
+
 
