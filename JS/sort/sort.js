@@ -10,7 +10,7 @@ export const searchInput = (input, condition) => {
     sortCard(input.value, condition)}
 };
 
-const sortCard = (value, condition) => {
+export const sortCard = (value, condition) => {
   resetArray();
   for (let index = 0; index < recipesArray.length; index++) {
     if (setCondition(index, value, condition))

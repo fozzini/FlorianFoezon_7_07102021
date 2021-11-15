@@ -1,4 +1,6 @@
-export const eventCreator = (event, btn, btnColor) => {
+import { sortCard } from "../sort/sort.js";
+
+export const eventCreator = (event, btn, btnColor, condition) => {
   const tagList = document.getElementById("taglist");
   for (let i = 0; i < event.length; i++) {
     event[i].addEventListener("click", () =>{
@@ -7,6 +9,7 @@ export const eventCreator = (event, btn, btnColor) => {
       ml-0 mr-2 mb-2 p-1 pr-2 pl-2 d-flex align-items-center">
       <small>${text}</small><i class="far fa-times-circle ml-2"></i></button>`
       btn.value = text;
+      // sortCard(text, condition);
       tagList.insertAdjacentHTML('beforeend', tagHtml);
       closeTagListener();
     })

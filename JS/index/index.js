@@ -29,9 +29,9 @@ searchInput(ingredientsSearch, "ingredients");
 searchInput(applianceSearch, "appliance");
 searchInput(ustensilsSearch, "ustensils");
 displayItems();
-eventCreator(eventIngredients, ingredientsSearch, "btn-primary");
-eventCreator(eventAppliance, applianceSearch, "btn-success");
-eventCreator(eventUstensils, ustensilsSearch, "btn-danger");
+eventCreator(eventIngredients, ingredientsSearch, "btn-primary","ingredients");
+eventCreator(eventAppliance, applianceSearch, "btn-success", "appliance");
+eventCreator(eventUstensils, ustensilsSearch, "btn-danger", "ustensils");
 };
 
 init();
