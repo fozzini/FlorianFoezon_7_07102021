@@ -1,4 +1,3 @@
-import { filteredRecipesArray} from "../array/array.js";
 
 export const lowerCase = (value) => {
   return value.toLowerCase();

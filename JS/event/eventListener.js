@@ -1,7 +1,7 @@
-import { tagListArray } from "../Array/array.js";
+import { tagListArray } from "../array/array.js";
 import { globalSearch } from "../index/index.js";
 import { sortCard } from "../sort/sort.js";
-import { filterArrayWithTags } from "../utils/utils.js";
+
 
 export const eventCreator = (event, btnColor) => {
   const tagList = document.getElementById("taglist");
