@@ -1,3 +1,4 @@
+import { filteredRecipesArray} from "../array/array.js";
 
 export const lowerCase = (value) => {
   return value.toLowerCase();
@@ -40,5 +41,10 @@ export const objectProperty = (array) => {
     return newArray;
 };
 
+export const filterArrayWithTags = () => {
+  for (let index = 0; index < recipesArray.length; index++) {
+    const element = recipesArray[index];     
+  }
+}
 
 

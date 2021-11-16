@@ -1,7 +1,7 @@
 import { displayItems, searchInput, setArrays } from '../sort/sort.js';
 import { applianceArray, arrayCreator, ingredientsArray, nameArray, ustensilsArray } from '../array/array.js';
 import { getData } from "../data/getData.js";
-import { eventCreator } from '../event/eventListener.js';
+import { eventCreator, globalInputEvent } from '../event/eventListener.js';
 
 
 export let globalSearch = document.getElementById("search");
@@ -24,14 +24,14 @@ arrayCreator(nameArray, "name");
 arrayCreator(ustensilsArray, "ustensils");
 arrayCreator(ingredientsArray, "ingredients");
 setArrays();
-searchInput(globalSearch, "globals");
+globalInputEvent();
 searchInput(ingredientsSearch, "ingredients");
 searchInput(applianceSearch, "appliance");
 searchInput(ustensilsSearch, "ustensils");
 displayItems();
-eventCreator(eventIngredients, ingredientsSearch, "btn-primary","ingredients");
-eventCreator(eventAppliance, applianceSearch, "btn-success", "appliance");
-eventCreator(eventUstensils, ustensilsSearch, "btn-danger", "ustensils");
+eventCreator(eventIngredients,"btn-primary");
+eventCreator(eventAppliance,"btn-success");
+eventCreator(eventUstensils,"btn-danger");
 };
 
 init();

@@ -1,4 +1,14 @@
-
-
-
+.placeholderbtn::placeholder {
+  color:white;
+}
+.dropdown-menu.show {
+  display: flex;
+  width: 420px;
+  flex-wrap: wrap;
+}
+.dropdown-item {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 
