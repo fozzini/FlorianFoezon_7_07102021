@@ -1,4 +1,4 @@
-import { tagListArray } from "../array/array.js";
+
 import { globalSearch } from "../index/index.js";
 import { sortCard } from "../sort/sort.js";
 
@@ -10,28 +10,20 @@ export const eventCreator = (event, btnColor) => {
       let text = event[i].innerHTML;
       const tagHtml = `<button type="button" class="tag btn ${btnColor}
       ml-0 mr-2 mb-2 p-1 pr-2 pl-2 d-flex align-items-center">
-      <small>${text}</small><i class="far fa-times-circle ml-2"></i></button>`
-      tagListArray.push(text);
-      // filterArrayWithTags();
+      <small>${text}</small><i class="far fa-times-circle ml-2"></i></button>`     
       tagList.insertAdjacentHTML('beforeend', tagHtml);
-      closeTagListener(event);
+      closeTagListener();
     })
   }
 };
 
-export const closeTagListener = (event) => {
+export const closeTagListener = () => {
   const close = document.querySelectorAll("i.far.fa-times-circle.ml-2");
-  const tag = document.getElementsByClassName("tag");
-  for (let index = 0; index < close.length; index++) {
-    close[index].addEventListener("click", () =>{
-      try {
-        tag[index].parentNode.removeChild(tag[index]);
-      } catch (error) {}  
-      if ( tagListArray[index] === event[index].innerHTML) { 
-        tagListArray.splice(index, 1); 
-      }
-    })
-  }
+  close[close.length -1].addEventListener("click", (event) =>{
+    let node = event.target.parentNode;
+    node.parentNode.removeChild(node)
+  })
+  
 };
 
 export const globalInputEvent= () => {
@@ -42,3 +34,4 @@ export const globalInputEvent= () => {
     else {sortCard("", "globals")}
   })
 }
+

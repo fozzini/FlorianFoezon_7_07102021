@@ -8,10 +8,9 @@ export let filteredApplianceArray = [];
 export let filteredUstensilsArray = [];
 export let filteredNameArray = [];
 export let filteredIngredientsArray = [];
-export let tagListArray = [];
 
 export const createRecipesArray = (data) =>{
-  const recipes = data.recipes;
+  const recipes = data;
   for (let index = 0; index < recipes.length; index++) {
     const element = recipes[index];
     recipesArray.push(element);
