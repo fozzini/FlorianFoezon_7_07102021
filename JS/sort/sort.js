@@ -1,4 +1,5 @@
-import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray, filteredRecipesArray } from "../array/array.js";
+import { ingredientsArray, ustensilsArray, recipesArray, applianceArray, nameArray, arrayCreator, filteredNameArray, filteredApplianceArray, filteredUstensilsArray, filteredIngredientsArray, filteredRecipesArray, tagListArray } from "../array/array.js";
+import { eventItems } from "../event/eventListener.js";
 import { card } from "../layout/card.js";
 import { lowerCase, lowercaseArray, objectProperty, removeDouble } from "../utils/utils.js";
 import { loopObject } from "../utils/utils.js";
@@ -20,6 +21,7 @@ export const sortCard = (value, condition) => {
   }
   setArrays();
   displayItems();
+  eventItems();
 };
 
 export const setArrays = () => {
