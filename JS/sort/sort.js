@@ -11,18 +11,25 @@ export const searchInput = (input, condition) => {
     sortCard(input.value, condition)}
 };
 
-export const sortCard = (value, condition) => {
-  resetArray();
-
-  for (let index = 0; index < recipesArray.length; index++) {
-    if (setCondition(index, value, condition))
-    {
-      filteredRecipesArray.push(recipesArray[index]);
-    }
+export const createArr = () => {
+  for (let i = 0; i < recipes.length; i++) {
+    const { name, ingredients, ustensils} = recipes[i];
   }
-  setArrays();
-  displayItems();
-  eventItems();
+}
+export const sortCard = (value, condition) => {
+
+  
+  // resetArray();
+
+  // for (let index = 0; index < recipesArray.length; index++) {
+  //   if (setCondition(index, value, condition))
+  //   {
+  //     filteredRecipesArray.push(recipesArray[index]);
+  //   }
+  // }
+  // setArrays();
+  // displayItems();
+  // eventItems();
 };
 
 export const setArrays = () => {
@@ -54,7 +61,7 @@ export const setCondition = (index, value, condition) => {
     case "appliance":
       return applianceCondition;    
     case "globals":
-      return ingredientsCondition || ustensilsCondition || applianceCondition || nameCondition;
+      return ingredientsCondition || ustensilsCondition || nameCondition;
     default:
       break;
   }
