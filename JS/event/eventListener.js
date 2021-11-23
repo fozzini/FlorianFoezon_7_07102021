@@ -1,7 +1,8 @@
 
-import { tagListArray } from "../Array/array.js";
+import { filteredRecipesArray, tagListArray } from "../array/array.js";
 import { eventAppliance, eventIngredients, eventUstensils, globalSearch } from "../index/index.js";
 import { sortCard} from "../sort/sort.js";
+import { filterArrayWithTags } from "../utils/utils.js";
 
 
 export const eventCreator = (event, btnColor) => {
@@ -15,6 +16,7 @@ export const eventCreator = (event, btnColor) => {
       tagListArray.push(text);    
       tagList.insertAdjacentHTML('beforeend', tagHtml);
       sortCard(e.target.innerText, "globals");
+      filterArrayWithTags(filteredRecipesArray, tagListArray)
       closeTagListener();
     })
   }

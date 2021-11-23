@@ -13,6 +13,7 @@ export const searchInput = (input, condition) => {
 
 export const sortCard = (value, condition) => {
   resetArray();
+
   for (let index = 0; index < recipesArray.length; index++) {
     if (setCondition(index, value, condition))
     {
@@ -39,7 +40,7 @@ const resetArray = () => {
   filteredIngredientsArray.length = 0;
 };
 
-const setCondition = (index, value, condition) => { 
+export const setCondition = (index, value, condition) => { 
   const ingredientsCondition = loopObject(ingredientsArray[index]).includes(value.toLowerCase());
   const ustensilsCondition = ustensilsArray[index].map(lowerCase).includes(value.toLowerCase());
   const nameCondition = nameArray[index].toLowerCase().includes(value.toLowerCase());

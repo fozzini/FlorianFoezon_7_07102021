@@ -40,10 +40,8 @@ export const objectProperty = (array) => {
     return newArray;
 };
 
-export const filterArrayWithTags = () => {
-  for (let index = 0; index < recipesArray.length; index++) {
-    const element = recipesArray[index];     
-  }
+export const filterArrayWithTags = (arr, tagsArr) => {
+  console.log(arr.filter(element => element.includes(tagsArr.forEach(element =>  element.innerText))));
 }
 
 
