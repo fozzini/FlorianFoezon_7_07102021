@@ -1,4 +1,4 @@
-import { ingredientsArray, ustensilsArray, applianceArray, createArrays, resetArrays, tagListArray, mainArray} from "../array/array.js";
+import { ingredientsArray, ustensilsArray, applianceArray, createArrays, tagListArray, mainArray} from "../array/array.js";
 import { card } from "../layout/card.js";
 import { removeDouble } from "../utils/utils.js";
 import { createDropdown } from "../layout/dropdown.js";
@@ -8,20 +8,11 @@ import { eventItems } from "../event/eventListener.js";
 
 export const searchInput = (input, condition) => {
   input.oninput = () => {
-    filterCard(input.value, condition)}
+    filterWithTags();
 };
+}
 
-export const filterCard = (array, value) => {
-  let filteredArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].some(element => element.includes(value.toLowerCase()))){
-      filteredArray.push(recipes[i])
-    }
-  }
-  createArrays(filteredArray, false);
-  displayItems(filteredArray);
-  eventItems();
-};
+
 
 export const filterWithTags = () => {
   let filteredArray = [];

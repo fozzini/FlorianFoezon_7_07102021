@@ -1,6 +1,6 @@
 
-import { mainArray, tagListArray } from "../array/array.js";
-import { filterCard, filterWithTags } from "../filter/filter.js";
+import { tagListArray } from "../array/array.js";
+import { filterWithTags } from "../filter/filter.js";
 import { eventAppliance, eventIngredients, eventUstensils, globalSearch } from "../index/index.js";
 
 export const eventCreator = (event, btnColor) => {
