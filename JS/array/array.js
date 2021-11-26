@@ -1,27 +1,46 @@
-export let recipesArray = [];
+
+export let mainArray = [];
 export let applianceArray = [];
 export let ustensilsArray = [];
 export let nameArray = [];
 export let ingredientsArray = [];
-export let filteredRecipesArray = [];
-export let filteredApplianceArray = [];
-export let filteredUstensilsArray = [];
-export let filteredNameArray = [];
-export let filteredIngredientsArray = [];
 export let tagListArray = [];
 
-export const createRecipesArray = (data) =>{
-  const recipes = data;
-  for (let index = 0; index < recipes.length; index++) {
-    const element = recipes[index];
-    recipesArray.push(element);
-    filteredRecipesArray.push(element)
-  }
-};
 
-export const arrayCreator = (array, property) => {
-  for (let index = 0; index < filteredRecipesArray.length; index++) {
-    const element = filteredRecipesArray[index][property];
-    array.push(element);
+export const createArrays = (array, isInit) => {
+  resetArrays();
+  for (let i = 0; i < array.length; i++) {
+    let { name, ingredients, ustensils, appliance} = array[i];
+    let ingrarr = [];
+    let ustarr = [];
+    let tempArray =[];
+    
+    for (let i = 0; i < ingredients.length; i++) {
+      const {ingredient} = ingredients[i];
+      ingrarr.push(ingredient.toLowerCase());
+      tempArray.push(ingredient.toLowerCase())
+    }
+    for (let i = 0; i < ustensils.length; i++) {
+      const ustensil = ustensils[i];
+      ustarr.push(ustensil.toLowerCase());
+      tempArray.push(ustensil.toLowerCase())
+    }
+    nameArray.push(name.toLowerCase());
+    applianceArray.push(appliance.toLowerCase());
+    ingredientsArray.push(ingrarr);
+    ustensilsArray.push(ustarr);
+    tempArray.push(name.toLowerCase(),appliance.toLowerCase());
+    if(isInit == true){
+      mainArray.push(tempArray);
+    }
   }
 }
+
+export const resetArrays = () => {
+  
+  applianceArray.length = 0;
+  ustensilsArray.length = 0;
+  nameArray.length = 0;
+  ingredientsArray.length = 0;
+  
+};

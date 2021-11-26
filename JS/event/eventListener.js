@@ -1,9 +1,7 @@
 
-import { filteredRecipesArray, tagListArray } from "../array/array.js";
+import { mainArray, tagListArray } from "../array/array.js";
+import { filterCard, filterWithTags } from "../filter/filter.js";
 import { eventAppliance, eventIngredients, eventUstensils, globalSearch } from "../index/index.js";
-import { sortCard} from "../sort/sort.js";
-import { filterArrayWithTags } from "../utils/utils.js";
-
 
 export const eventCreator = (event, btnColor) => {
   const tagList = document.getElementById("taglist");
@@ -15,8 +13,7 @@ export const eventCreator = (event, btnColor) => {
       <small>${text}</small><i class="far fa-times-circle ml-2"></i></button>` 
       tagListArray.push(text);    
       tagList.insertAdjacentHTML('beforeend', tagHtml);
-      sortCard(e.target.innerText, "globals");
-      filterArrayWithTags(filteredRecipesArray, tagListArray)
+      filterWithTags();
       closeTagListener();
     })
   }
@@ -32,15 +29,22 @@ export const closeTagListener = () => {
       if ( element === node.innerText.trim()) { 
         tagListArray.splice(index, 1)}
     }
+    filterWithTags();
   })
+ 
 }
   
 export const globalInputEvent= () => {
+  tagListArray.unshift("");
   globalSearch.addEventListener("input",() =>{
     if (globalSearch.value.length >= 3) {
-      sortCard(globalSearch.value, "globals");
+      tagListArray.splice(0, 1, globalSearch.value);
+      filterWithTags();
+      console.log(tagListArray);
     }
-    else {sortCard("", "globals");}
+    else {tagListArray.splice(0, 1, "");
+    filterWithTags();
+    }
   })
 }
 
