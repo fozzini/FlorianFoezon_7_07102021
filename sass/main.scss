@@ -1,14 +1,68 @@
 .placeholderbtn::placeholder {
   color:white;
 }
+.show{
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  border-width: 0;
+}
+.btn-group{
+  
+  &.blue{background-color: #007bff;}
+  &.red{background-color: #dc3545;}
+  &.green{background-color: #28a745;}
+}
+.btn-primary{
+  border:none;
+  &:hover{background-color: #007bff;
+  border:none;
+  &:focus{border:none;}
+  }
+}
+.btn-success{
+  border:none;
+  &:hover{background-color: #28a745;
+  border:none;}
+}
+
+.btn-danger{
+  border:none;
+  &:hover{background-color: #dc3545;
+  border: none;}
+}
+.show>.btn-primary.dropdown-toggle{
+  background-color: #007bff;
+  border:none;
+}
+.show>.btn-success.dropdown-toggle{
+  background-color: #28a745;
+  border:none;
+}
+.show>.btn-danger.dropdown-toggle{
+  background-color: #dc3545;
+  border:none;
+}
 .dropdown-menu.show {
   display: flex;
-  width: 420px;
+  width: 100%;
   flex-wrap: wrap;
+  border-width: 0;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
 }
+
 .dropdown-item {
   width: 33%;
   overflow: hidden;
   text-overflow: ellipsis; 
+  &.firstGroup{
+    background-color: #007bff;
+  }
+  &.secondGroup{
+    background-color: #dc3545;
+  }
+  &.thirdGroup{background-color: #28a745;}
 }
+
 
