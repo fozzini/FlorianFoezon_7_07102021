@@ -15,3 +15,5 @@ export const eventUstensils = ustensilsNodes.getElementsByTagName("a");
 export const ingredientsDropdownList = document.getElementsByClassName("firstGroup")
 export const ustensilsDropdownList = document.getElementsByClassName("secondGroup")
 export const applianceDropdownList = document.getElementsByClassName("thirdGroup")
+
+export const message = document.getElementById("message");

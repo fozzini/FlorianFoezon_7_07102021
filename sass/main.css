@@ -1,4 +1,4 @@
-.placeholderbtn::-moz-placeholder {
+.placeholderbtn::-webkit-input-placeholder {
   color: white;
 }
 
@@ -6,18 +6,136 @@
   color: white;
 }
 
+.placeholderbtn::-ms-input-placeholder {
+  color: white;
+}
+
 .placeholderbtn::placeholder {
   color: white;
 }
 
-.dropdown-menu.show {
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  width: 420px;
-  flex-wrap: wrap;
+  width: 50%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-width: 0;
+}
+
+.btn-group.blue {
+  background-color: #007bff;
+}
+
+.btn-group.red {
+  background-color: #dc3545;
+}
+
+.btn-group.green {
+  background-color: #28a745;
+}
+
+.btn-primary {
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover:focus {
+  border: none;
+}
+
+.btn-success {
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-danger {
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+  border: none;
+}
+
+.show > .btn-primary.dropdown-toggle {
+  background-color: #007bff;
+  border: none;
+}
+
+.show > .btn-success.dropdown-toggle {
+  background-color: #28a745;
+  border: none;
+}
+
+.show > .btn-danger.dropdown-toggle {
+  background-color: #dc3545;
+  border: none;
+}
+
+.dropdown-menu.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-width: 0;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
 }
 
 .dropdown-item {
   width: 33%;
   overflow: hidden;
   text-overflow: ellipsis;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.dropdown-item.firstGroup {
+  background-color: #007bff;
+}
+
+.dropdown-item.secondGroup {
+  background-color: #dc3545;
+}
+
+.dropdown-item.thirdGroup {
+  background-color: #28a745;
+}
+
+.card {
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media all and (max-width: 550px) {
+  .secondarySearch {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .card-container {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .card-container {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

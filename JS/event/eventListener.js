@@ -1,5 +1,5 @@
 
-import { tagListArray } from "../array/array.js";
+import { fullArray, mainArray, tagListArray } from "../array/array.js";
 import { applianceDropdownList, applianceSearch, eventAppliance, eventIngredients, eventUstensils, globalSearch, ingredientsDropdownList, ingredientsSearch, ustensilsDropdownList, ustensilsNodes, ustensilsSearch } from "../dom/domNodes.js";
 import { filter } from "../filter/filter.js";
 
@@ -21,7 +21,7 @@ export const tagEventCreator = (event, btnColor) => {
       <small>${text}</small><i class="far fa-times-circle ml-2"></i></button>` 
       tagListArray.push(text);    
       tagList.insertAdjacentHTML('beforeend', tagHtml);
-      filter();
+      filter(fullArray);
       closeTagListener();
     })
   }
@@ -37,10 +37,11 @@ export const closeTagListener = () => {
       if ( element === node.innerText.trim()) { 
         tagListArray.splice(index, 1)}
     }
-    filter();
+    filter(fullArray);
   })
 }
-  /* évennements liés aux inputs */
+
+/* évennements liés aux inputs */
 export const inputEvent = () => {
   searchInput(ingredientsSearch, ingredientsDropdownList);
   searchInput(applianceSearch, applianceDropdownList);
@@ -52,7 +53,6 @@ export const searchInput = (input, dropdownlist) => {
   input.addEventListener("input",() =>{
     for (let i = 0; i < dropdownlist.length; i++) {
       const element = dropdownlist[i].innerText;
-      
       if(element.includes(input.value)){
         console.log(element);
         console.log(input.value)
@@ -62,8 +62,6 @@ export const searchInput = (input, dropdownlist) => {
         dropdownlist[i].style.display = "none";
       }
     }
-    
-  
   });
 }
 
@@ -72,10 +70,10 @@ const globalInputEvent= () => {
   globalSearch.addEventListener("input",() =>{
     if (globalSearch.value.length >= 3) {
       tagListArray.splice(0, 1, globalSearch.value);
-      filter();
+      filter(mainArray);
     }
     else {tagListArray.splice(0, 1, "");
-      filter();
+      filter(mainArray);
     }
   })
 }
