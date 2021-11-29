@@ -1,28 +1,25 @@
+import { applianceArray, ingredientsArray, nameArray, ustensilsArray } from "../array/array.js";
+import { card } from "../layout/card.js";
+import { createDropdown } from "../layout/dropdown.js";
 
-
-
-export const concatArray = (myArray) => {
-  for (let i= 0; i < myArray.length; i++){
-     myArray[i].toLowerCase() ;
-  }
-};
-
+/* enlève les doublons */
 export const removeDouble = (array) => {
  let ens = new Set(array);
  return Array.from(ens);
 };
 
-export const objectProperty = (array) => {
-  let newArray = []
-    for (let index = 0; index < array.length; index++) {
-      const element = array[index]["ingredient"];
-      newArray.push(element);
-    }
-    return newArray;
+/* reinitialise les tableaux */
+export const resetArrays = () => {
+  applianceArray.length = 0;
+  ustensilsArray.length = 0;
+  nameArray.length = 0;
+  ingredientsArray.length = 0;
 };
 
-export const filterArrayWithTags = (arr, tagsArr) => {
-  console.log(arr.filter(element => element.includes(tagsArr.forEach(element =>  element.innerText))));
+/* affiche les éléments */
+export const displayItems = (array) => {
+  card(array)
+  createDropdown(removeDouble(ingredientsArray.flat()), "ingredientsgst", "firstGroup")
+  createDropdown(removeDouble(ustensilsArray.flat()), "ustensilsgt", "secondGroup")
+  createDropdown(removeDouble(applianceArray), "appliancesgt", "thirdGroup")
 }
-
-

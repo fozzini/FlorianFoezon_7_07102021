@@ -1,5 +1,6 @@
 import { Recipe } from '../class/Recipe.js';
 
+/* création des vignettes */
 export const card = (array) =>{
   const gallery = document.querySelector(".gallery");
   const arrayRawHtml = [];

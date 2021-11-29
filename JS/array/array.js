@@ -1,4 +1,6 @@
+import { resetArrays } from "../utils/utils.js";
 
+/* tableaux */
 export let mainArray = [];
 export let applianceArray = [];
 export let ustensilsArray = [];
@@ -6,6 +8,7 @@ export let nameArray = [];
 export let ingredientsArray = [];
 export let tagListArray = [];
 
+/* création des tableaux */
 
 export const createArrays = (array, isInit) => {
   resetArrays();
@@ -34,13 +37,4 @@ export const createArrays = (array, isInit) => {
       mainArray.push(tempArray);
     }
   }
-}
-
-export const resetArrays = () => {
-  
-  applianceArray.length = 0;
-  ustensilsArray.length = 0;
-  nameArray.length = 0;
-  ingredientsArray.length = 0;
-  
 };
