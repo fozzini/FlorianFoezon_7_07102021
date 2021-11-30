@@ -2,9 +2,10 @@
   "name": "florianfoezon_7_07102021",
   "version": "1.0.0",
   "description": "Les petits plats",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,8 @@
     "url": "https://github.com/fozzini/FlorianFoezon_7_07102021/issues"
   },
   "homepage": "https://github.com/fozzini/FlorianFoezon_7_07102021#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "parcel": "^2.0.0-rc.0"
+  "devDependencies": {
+    "parcel": "^2.0.0",
+    "parcel-bundler": "^1.9.4"
   }
 }

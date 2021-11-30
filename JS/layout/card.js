@@ -1,20 +1,13 @@
 import { Recipe } from '../class/Recipe.js';
-import { recipes } from '../data/data.js';
-import { createApplianceArray, createRecipesArray, createUstensilsArray, createIngredientsArray  } from '../Array/Array.js';
 
-
-export const card = () =>{
+/* création des vignettes */
+export const card = (array) =>{
   const gallery = document.querySelector(".gallery");
-    for (let index = 0; index < recipes.length; index++) {
-    const element = recipes[index];
-    const recipe = new Recipe(element);
-    gallery.insertAdjacentHTML("beforeend",recipe.createHtml());
-    createApplianceArray(recipe.appliance);
-    createRecipesArray(recipe.name);
-    createUstensilsArray(recipe.ustensils);
-    createIngredientsArray(recipe.ingredients)
+  const arrayRawHtml = [];
+  for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  const recipe = new Recipe(element);
+  arrayRawHtml.push(recipe.createHtml());
   }
-  // createSortedApplianceArray();
-  // createSortedIngredientsArray();
-  // createSortedUstensilsArray();
-}
+  gallery.innerHTML = arrayRawHtml.join("");
+};

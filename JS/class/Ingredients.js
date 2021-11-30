@@ -1,6 +1,5 @@
-
 export class Ingredients{
-  
+  /* création ingédients */
   constructor(data){
     this.ingredient = data.ingredient;
     this.quantity = data.quantity;

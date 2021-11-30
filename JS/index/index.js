@@ -1,17 +1,15 @@
-import {card} from '../layout/card.js';
-import { searchInput, searchInputAppliance, searchInputIngredients, searchInputUstensils } from '../sort/sort.js';
+import { inputEvent, tagEvent } from '../event/eventListener.js';
+import { createArrays } from '../array/array.js';
+import { recipes } from '../data/data.js';
+import { displayItems } from '../utils/utils.js';
 
-
-
-const init = () =>{
-card();
-searchInput();
-searchInputAppliance();
-searchInputIngredients();
-searchInputUstensils();
-// createSuggestion(doubleRemover(sortedIngredientsArray), "'ingredientsgst'" );
-// createSuggestion(doubleRemover(sortedApplianceArray), "'appliancesgt'" );
-// createSuggestion(doubleRemover(sortedUstensilsArray), "'ustensilsgt'" );
+/* initialisation du code */
+const init =  () =>{
+createArrays(recipes, true);
+displayItems(recipes)  ;
+inputEvent();
+tagEvent();
 };
-
+ 
 init();
+
