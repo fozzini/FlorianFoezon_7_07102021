@@ -1,7 +1,10 @@
 .placeholderbtn::placeholder {
   color:white;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .show{
   display: flex;
   width: 50%;
@@ -9,10 +12,17 @@
   border-width: 0;
 }
 .btn-group{
+<<<<<<< HEAD
   &.blue{background-color: #007bff;}
   &.red{background-color: #dc3545;}
   &.green{background-color: #28a745;}
   
+=======
+  
+  &.blue{background-color: #007bff;}
+  &.red{background-color: #dc3545;}
+  &.green{background-color: #28a745;}
+>>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 }
 .btn-primary{
   border:none;
@@ -64,6 +74,7 @@
     background-color: #dc3545;
   }
   &.thirdGroup{background-color: #28a745;}
+<<<<<<< HEAD
 }
 .card{
   width:auto;
@@ -84,5 +95,8 @@
   .card-container{
     width:50%;
   }
+=======
+>>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 }
+
 
