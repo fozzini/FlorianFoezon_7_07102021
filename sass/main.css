@@ -15,35 +15,29 @@
 }
 
 .show {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 50%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-=======
   display: flex;
   width: 50%;
   flex-wrap: wrap;
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
   border-width: 0;
 }
 
 .btn-group.blue {
   background-color: #007bff;
 }
-<<<<<<< HEAD
 
 .btn-group.red {
   background-color: #dc3545;
 }
 
-=======
 .btn-group.red {
   background-color: #dc3545;
 }
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .btn-group.green {
   background-color: #28a745;
 }
@@ -51,18 +45,12 @@
 .btn-primary {
   border: none;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .btn-primary:hover {
   background-color: #007bff;
   border: none;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .btn-primary:hover:focus {
   border: none;
 }
@@ -70,10 +58,7 @@
 .btn-success {
   border: none;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .btn-success:hover {
   background-color: #28a745;
   border: none;
@@ -82,10 +67,7 @@
 .btn-danger {
   border: none;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
 .btn-danger:hover {
   background-color: #dc3545;
   border: none;
@@ -111,12 +93,9 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-<<<<<<< HEAD
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-=======
   flex-wrap: wrap;
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
   border-width: 0;
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
@@ -127,7 +106,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-<<<<<<< HEAD
 
 .dropdown-item.firstGroup {
   background-color: #007bff;
@@ -168,7 +146,6 @@
   }
 }
 /*# sourceMappingURL=main.css.map */
-=======
 .dropdown-item.firstGroup {
   background-color: #007bff;
 }
@@ -178,4 +155,3 @@
 .dropdown-item.thirdGroup {
   background-color: #28a745;
 }/*# sourceMappingURL=main.css.map */
->>>>>>> 9b984e8d00dc2777a3fc0a5c6c89bf20d54469b4
