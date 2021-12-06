@@ -24,45 +24,41 @@
           </div>
         </div>
       </div>
-        <div class="container d-flex" id="taglist">
+        <div class="container d-flex flex-wrap" id="taglist">
         </div>
-        <div class="container secondarySearch d-flex ">
-          <div class="rounded btn-group blue mr-2 ">
-        <div class="container d-flex ">
-          <div class="btn-group blue mr-2">
-            <form class="btn md-0 pd-0 btn-primary dropdown-toggle mr-2" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+        <div class="container d-flex flex-wrap ">
+
+          <div class="rounded btn-group blue mr-2 mt-2 ">
+            <form class="btn md-0 pd-0 btn-primary dropdown-toggle mr-2 accordion-icon" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
               <label for="ingredientsBtn"></label>
-              <input type="text" id="ingredientsBtn" value="" class="bg-primary text-white placeholderbtn" style= "border:none; width:100px;" placeholder="Ingredients">
+              <input type="text" id="ingredientsBtn" class="bg-primary" placeholder="Ingredients">
+              <span class="float-right"><i class="fas fa-angle-down"></i></span>
             </form>
-            <div class="dropdown-menu mt-0 pt-0 bg-primary" id="ingredientsgst">
-            </div>
+            <div class="dropdown-menu mt-0 pt-0 bg-primary" id="ingredientsgst"></div>
           </div>
-          <div class="btn-group green mr-2 rounded">
-          <div class="btn-group green mr-2">
-            <form  class="btn btn-success dropdown-toggle mr-2" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+
+          <div class="rounded btn-group green mr-2 mt-2 ">
+            <form  class="btn btn-success dropdown-toggle mr-2 accordion-icon" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
               <label for="applianceBtn"></label>
-              <input type="text" id="applianceBtn" class="bg-success text-white placeholderbtn" value="" style="border:none; width:100px;"  placeholder="Appareil">
+              <input type="text" id="applianceBtn" class="bg-success" value="" placeholder="Appareil">
+              <span class="float-right"><i class="fas fa-angle-down"></i></span>
             </form>
-            <div class="dropdown-menu mt-0 pt-0 bg-success " id="appliancesgt">
-            </div>
+            <div class="dropdown-menu mt-0 pt-0 bg-success " id="appliancesgt"></div>
           </div>
-          <div class="btn-group red mr-2 rounded">
-            <div class="dropdown-menu mt-0 pt-0 bg-success" id="appliancesgt">
-            </div>
-          </div>
-          <div class="btn-group red mr-2">
-            <form class="btn btn-danger dropdown-toggle mr-2" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+          <div class="rounded btn-group red mr-2 mt-2">        
+            <form class="btn btn-danger dropdown-toggle mr-2 accordion-icon" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
               <label for="ustensilsBtn"></label>
-              <input type="text" id="ustensilsBtn" class="bg-danger text-white placeholderbtn" value="" style="border:none; width:100px;" placeholder="Ustensiles">
+              <input type="text" id="ustensilsBtn" class="bg-danger" value="" placeholder="Ustensiles">
+              <span class="float-right"><i class="fas fa-angle-down"></i></span>
             </form>
-            <div class="dropdown-menu mt-0 pt-0 bg-danger" id="ustensilsgt">
-            </div>
+            <div class="dropdown-menu mt-0 pt-0 bg-danger" id="ustensilsgt"></div>
           </div>
+
         </div>
       </div>
     
   </header>
-  <section class="container ">
+  <section class="container flex-wrap ">
     <p id="message" style="display: none;">Aucune recette ne correspond à votre critère… vous pouvez
       chercher « tarte aux pommes », « poisson », etc.</p>
     <div class="row gallery">

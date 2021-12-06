@@ -77,6 +77,20 @@ const globalInputEvent= () => {
     }
   })
 }
+/* évenement changement de valeur du placeholder */
+export const placeHolderEvent = () => {
+placeHolderListener(ingredientsSearch, "cherche un ingrédient", "ingrédients");
+placeHolderListener(applianceSearch, "cherche un appareil", "appareil");
+placeHolderListener(ustensilsSearch, "cherche un ustensile", "ustensiles");
+}
+const placeHolderListener = (node, inText, outText) => {
+    node.addEventListener("focusin",() =>{
+    node.placeholder=inText;
+  })
+    node.addEventListener("focusout",() =>{
+    node.placeholder=outText;
+  })
+}
 
 
 

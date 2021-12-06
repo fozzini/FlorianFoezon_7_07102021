@@ -1,5 +1,15 @@
-.placeholderbtn::placeholder {
-  color:white;
+.bg-primary, .bg-success, .bg-danger {
+  border:none;
+  width:100px;
+  &:focus{
+    width:180px;
+    &::placeholder{
+      color:#b8b2b2;
+    }
+  }
+  &::placeholder{
+  color:#ffffff;
+  }
 }
 
 .show{
@@ -14,6 +24,9 @@
   &.green{background-color: #28a745;}
   
 }
+input{
+  outline: none;
+}
 .btn-primary{
   border:none;
   &:hover{background-color: #007bff;
@@ -26,7 +39,6 @@
   &:hover{background-color: #28a745;
   border:none;}
 }
-
 .btn-danger{
   border:none;
   &:hover{background-color: #dc3545;
@@ -52,7 +64,6 @@
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
 }
-
 .dropdown-item {
   width: 33%;
   overflow: hidden;
@@ -70,20 +81,40 @@
   overflow: hidden;
   text-overflow: ellipsis; 
 }
-@media all and (max-width: 550px) {
-  .secondarySearch{
-    flex-direction: column;
+@media (max-width : 1000px) {
+  .show{
+    width: 75%;
+  }
+}
+@media (max-width : 600px) {
+  .show{
+    width: 100%; 
+  }
+}
+@media (max-width : 500px) {
+  .dropdown-item {
+    width: 50%;
+  }
+}
+.dropdown-toggle::after {
+  content: none;
+}
+.show>.dropdown-toggle::after {
+  content: none;
+}
+.accordion-icon[aria-expanded="false"] .fa-angle-down {
+  transform: rotate(0deg);
+  transition: 0.5s;
+}
 
-  }
-}
-@media all and (max-width: 630px) {
-  .card-container{
-    width:100%;
-  }
-}
-@media all and (max-width: 1000px) {
-  .card-container{
-    width:50%;
-  }
+.accordion-icon[aria-expanded="true"] .fa-angle-down {
+  transform: rotate(180deg);
+  transition: 0.5s;
+
 }
 
+.show>form{
+  border:none;
+  width:100%;
+  text-align: left;
+}
