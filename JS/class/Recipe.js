@@ -20,7 +20,7 @@ export class Recipe{
             <p class="col-8 pr-0">${this.name}</p>
             <p class="col-3 text-dark ml-0 pl-0 pr-0 font-weight-bold"><i class="far fa-clock pr-2"></i>${this.time} mins</p>
           </div>
-          <div class="row">
+          <div class="row txt">
             <ul class="col card-text font-weight-bold ingredients">${this.createRecipe()}</ul>
             <p class="col card-text" style="font-size:14px; display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;" >${this.description}</p>
           </div>

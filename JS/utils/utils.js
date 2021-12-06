@@ -5,7 +5,7 @@ import { createDropdown } from "../layout/dropdown.js";
 /* enlève les doublons */
 export const removeDouble = (array) => {
  let ens = new Set(array);
- return Array.from(ens);
+ return Array.from(ens).sort();
 };
 
 /* reinitialise les tableaux */

@@ -1,6 +1,17 @@
-.placeholderbtn::placeholder {
-  color:white;
+.bg-primary, .bg-success, .bg-danger {
+  border:none;
+  width:100px;
+  &:focus{
+    width:180px;
+    &::placeholder{
+      color:#b8b2b2;
+    }
+  }
+  &::placeholder{
+  color:#ffffff;
+  }
 }
+
 .show{
   display: flex;
   width: 50%;
@@ -8,10 +19,13 @@
   border-width: 0;
 }
 .btn-group{
-  
   &.blue{background-color: #007bff;}
   &.red{background-color: #dc3545;}
   &.green{background-color: #28a745;}
+  
+}
+input{
+  outline: none;
 }
 .btn-primary{
   border:none;
@@ -25,7 +39,6 @@
   &:hover{background-color: #28a745;
   border:none;}
 }
-
 .btn-danger{
   border:none;
   &:hover{background-color: #dc3545;
@@ -51,7 +64,6 @@
   border-top-left-radius: 0%;
   border-top-right-radius: 0%;
 }
-
 .dropdown-item {
   width: 33%;
   overflow: hidden;
@@ -64,5 +76,45 @@
   }
   &.thirdGroup{background-color: #28a745;}
 }
+.card{
+  width:auto;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+@media (max-width : 1000px) {
+  .show{
+    width: 75%;
+  }
+}
+@media (max-width : 600px) {
+  .show{
+    width: 100%; 
+  }
+}
+@media (max-width : 500px) {
+  .dropdown-item {
+    width: 50%;
+  }
+}
+.dropdown-toggle::after {
+  content: none;
+}
+.show>.dropdown-toggle::after {
+  content: none;
+}
+.accordion-icon[aria-expanded="false"] .fa-angle-down {
+  transform: rotate(0deg);
+  transition: 0.5s;
+}
 
+.accordion-icon[aria-expanded="true"] .fa-angle-down {
+  transform: rotate(180deg);
+  transition: 0.5s;
 
+}
+
+.show>form{
+  border:none;
+  width:100%;
+  text-align: left;
+}
