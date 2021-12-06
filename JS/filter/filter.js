@@ -17,7 +17,6 @@ export const filter = (array) => {
       else {answerArray.push("false")};
     })
     if(answerArray.includes("false") == false){ filteredArray.push(recipes[i]);}
-    console.log(i);
   })
   if (filteredArray.length == 0){
     message.style.display = "block";
