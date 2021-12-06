@@ -8,16 +8,17 @@ import { displayItems } from "../utils/utils.js";
 
 export const filter = (array) => {
   let filteredArray = [];
-  for (let i = 0; i < array.length; i++) {
+  array.forEach((element, i) => {
     let answerArray = [];
-    for (let j = 0; j < tagListArray.length; j++) {
-      if (array[i].some(element => element.includes(tagListArray[j]))){
+    tagListArray.forEach(tag => {
+      if (element.some(search => search.includes(tag))){
         answerArray.push("true");
       }
       else {answerArray.push("false")};
-    }
+    })
     if(answerArray.includes("false") == false){ filteredArray.push(recipes[i]);}
-  }
+    console.log(i);
+  })
   if (filteredArray.length == 0){
     message.style.display = "block";
   }
